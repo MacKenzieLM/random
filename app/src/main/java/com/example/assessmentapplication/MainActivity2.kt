@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_main2.*
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
+import java.nio.charset.Charset
 
 class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,14 +34,10 @@ class MainActivity2 : AppCompatActivity() {
 
         val myFile = File(myDir, fileName)
 
-        val file = FileReader(myFile)
-        val reader = BufferedReader(file)
-
-        val info = file.toString()
-        item1.text = info
-        verticalLayout.addView(item1)
-
-
+            val bufferedReader: BufferedReader = myFile.bufferedReader()
+            val inputString = bufferedReader.use { it.readText() }
+            item1.text = inputString
+            verticalLayout.addView(item1)
     }
 
 }
