@@ -1,9 +1,9 @@
 package com.example.assessmentapplication
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Environment
+import android.os.Handler
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
+import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,12 +20,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        
-        val datetime = Calendar.getInstance().time
-        val date0 = datetime.toString()
-        val Datetime = dateTime as TextView
-        Datetime.text = date0
-
+        val someHandler = Handler(mainLooper)
+        someHandler.postDelayed(object : Runnable {
+            override fun run() {
+                val date0 = dateTime as TextView
+                date0.setText(SimpleDateFormat("dd/MM/yy - HH:mm", Locale.UK).format(Date()))
+                someHandler.postDelayed(this, 1000)
+            }
+        }, 10)
     }
 
     var fullNumber = ""

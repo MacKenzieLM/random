@@ -8,6 +8,7 @@
 
     <ScrollView
         android:id="@+id/ScrollView"
+        style="@style/Theme.AssessmentApplication"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="32dp"
@@ -28,11 +29,12 @@
 
     <Button
         android:id="@+id/navButton1"
+        style="@style/Theme.AssessmentApplication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="115dp"
         android:onClick="navigateToPage1"
-        android:text="Page 1"
+        android:text="View Generator"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/loadPass"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +42,7 @@
 
     <Button
         android:id="@+id/loadPass"
+        style="@style/Theme.AssessmentApplication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="load"
@@ -48,5 +51,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/navButton1"
         app:layout_constraintTop_toBottomOf="@+id/ScrollView" />
+
+    <TextView
+        android:id="@+id/savedPasswords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Saved Passcodes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

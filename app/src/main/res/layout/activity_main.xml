@@ -5,32 +5,38 @@
     android:id="@+id/Page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/generatePasscode"
+        style="@style/AppTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:onClick="change"
         android:text="Generate Passcode"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bubbleTwo" />
+        app:layout_constraintTop_toBottomOf="@+id/bubbleTwo"
+        app:rippleColor="#03A9F4"
+        app:strokeColor="#03A9F4" />
 
-    <EditText
+    <TextView
         android:id="@+id/applicationTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
         android:text="Password Generator"
         android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,6 +107,7 @@
 
     <EditText
         android:id="@+id/textDescription"
+        style="@style/Theme.AssessmentApplication"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -120,18 +127,19 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/applicationTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Save"
+        style="@style/Theme.AssessmentApplication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:background="@android:color/holo_red_dark"
         android:onClick="generate"
         android:text="Save Passcode"
         app:layout_constraintEnd_toEndOf="parent"
@@ -140,11 +148,12 @@
 
     <Button
         android:id="@+id/Navigate"
+        style="@style/Theme.AssessmentApplication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:onClick="navigateToPage2"
-        android:text="Page 2"
+        android:text="View Saved Passcodes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Save" />
